@@ -69,10 +69,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WebServiceInterfaces.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Interfaces/src/WebServiceInterfaces.scala">
+      <file leaf-file-name="WebServiceInterface.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Interfaces/src/WebServiceInterface.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="28" selection-start="184" selection-end="550" vertical-scroll-proportion="0.0">
+            <state line="17" column="1" selection-start="183" selection-end="549" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -81,7 +81,7 @@
       <file leaf-file-name="DataLayerInterface.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interfaces/src/DataLayerInterface.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="31" selection-start="421" selection-end="421" vertical-scroll-proportion="0.27836257">
+            <state line="16" column="0" selection-start="446" selection-end="446" vertical-scroll-proportion="0.31812865">
               <folding />
             </state>
           </provider>
@@ -184,7 +184,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -237,7 +237,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -245,13 +245,13 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="vcs.Git" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -266,6 +266,19 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -294,19 +307,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -468,7 +468,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Interfaces/src/WebServiceInterfaces.scala">
+    <entry file="file://$PROJECT_DIR$/Interfaces/src/DayOffType.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="158" selection-end="263" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interfaces/src/WebServiceInterface.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="28" selection-start="184" selection-end="550" vertical-scroll-proportion="0.0">
           <folding />
@@ -517,7 +524,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interfaces/src/WebServiceInterfaces.scala">
+    <entry file="file://$PROJECT_DIR$/Interfaces/src/WebServiceInterface.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="25" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0">
           <folding />
@@ -559,16 +566,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interfaces/src/WebServiceInterfaces.scala">
+    <entry file="file://$PROJECT_DIR$/Interfaces/src/WebServiceInterface.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="28" selection-start="184" selection-end="550" vertical-scroll-proportion="0.0">
+        <state line="17" column="1" selection-start="183" selection-end="549" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Interfaces/src/DataLayerInterface.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="31" selection-start="421" selection-end="421" vertical-scroll-proportion="0.27836257">
+        <state line="16" column="0" selection-start="446" selection-end="446" vertical-scroll-proportion="0.31812865">
           <folding />
         </state>
       </provider>

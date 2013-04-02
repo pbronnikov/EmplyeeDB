@@ -5,7 +5,7 @@
  * Time: 14:57
  * To change this template use File | Settings | File Templates.
  */
-trait WebServiceInterfaces {
+trait WebServiceInterface {
   def create(employee: Employee): Int
   def edit(employee: Employee): Int
   def archive(id: Int): Int
