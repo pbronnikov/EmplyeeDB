@@ -17,6 +17,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="scala-library (2)" level="project" />
     <orderEntry type="module" module-name="Interfaces" />
+    <orderEntry type="library" name="querulous-1.1.11" level="project" />
   </component>
 </module>
 
