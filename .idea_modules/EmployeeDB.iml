@@ -39,6 +39,7 @@
     <orderEntry type="library" name="org.eclipse.jetty_jetty-continuation_7.5.4.v20111024" level="project" />
     <orderEntry type="library" name="org.eclipse.jetty_jetty-http_7.5.4.v20111024" level="project" />
     <orderEntry type="library" name="org.eclipse.jetty_jetty-io_7.5.4.v20111024" level="project" />
+    <orderEntry type="library" name="org.scalaz_scalaz-core_2.9.1_6.0.4" level="project" />
     <orderEntry type="library" name="com.twitter_querulous_2.1.5" level="project" />
     <orderEntry type="library" name="commons-dbcp_commons-dbcp_1.4" level="project" />
     <orderEntry type="library" name="commons-pool_commons-pool_1.5.4" level="project" />
