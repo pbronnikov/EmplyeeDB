@@ -9,13 +9,5 @@
 object main {
   def main(args: Array[String]) = {
 
-    val dal = new DataLayer();
-    val allEmployees = dal.getAll
-
-    //allEmployees.foreach(i => println(i.lastName));
-
-    val empl = dal.getByID(1)
-
-    println(empl.firstName)
   }
 }
