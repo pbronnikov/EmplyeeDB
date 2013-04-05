@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit
 
 object DBConnectionFactory {
   private val host = "localhost"
+  private val dbname = "employerdb_test"
   private val user = "root"
   private val password = "toor"
 
@@ -31,5 +32,5 @@ object DBConnectionFactory {
   )
   private val queryEvaluatorFactory = new StandardQueryEvaluatorFactory(apachePoolingDatabaseFactory, queryFactory)
 
-  def GetQueryEvaluator() =  queryEvaluatorFactory(host, user, password)
+  def GetQueryEvaluator() =  queryEvaluatorFactory(host, dbname, user, password)
 }

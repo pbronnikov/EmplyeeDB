@@ -8,7 +8,7 @@
 trait DataLayerInterface
 {
     def edit(employee: Employee): Int
-    def getAll : List[Employee]
+    def getAll : Seq[Employee]
     def getByID(id: Int): Employee
     def search(criteria: String): List[Employee]
     def editDayOff(dayOff: DayOff, employeeID: Int)

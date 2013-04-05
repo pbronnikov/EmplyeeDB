@@ -1,3 +1,4 @@
+import DAL.DBConnectionFactory
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,13 +8,34 @@
  * To change this template use File | Settings | File Templates.
  */
 
+import scalaz._
+import Scalaz._
+
+
 class DataLayer extends DataLayerInterface{
 
   def edit(employee: Employee): Int = 0
 
-  def getAll: List[Employee] = null
+  def getAll: Seq[Employee] =
+  {
+    return DBConnectionFactory.GetQueryEvaluator.select("SELECT * FROM Employee") { ToEmployee }
+  }
 
-  def getByID(id: Int): Employee = null
+  def ToEmployee(row: java.sql.ResultSet) : Employee =
+  {
+    new Employee(row.getInt("id"),
+      row.getString("firstName"),
+      row.getString("middleName"),
+      row.getString("LastName"),
+      row.getString("skype"),
+      row.getString("tel"),
+      row.getString("email"));
+  }
+
+  def getByID(id: Int): Employee =
+  {
+    return (DBConnectionFactory.GetQueryEvaluator.select("SELECT * FROM Employee where id=?", id) { ToEmployee }).head
+  }
 
   def search(criteria: String): List[Employee] = null
 
