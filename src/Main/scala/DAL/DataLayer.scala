@@ -1,3 +1,4 @@
+
 /**
  * Created with IntelliJ IDEA.
  * User: pbronnikov
@@ -5,6 +6,7 @@
  * Time: 16:30
  * To change this template use File | Settings | File Templates.
  */
+
 class DataLayer extends DataLayerInterface{
 
   def edit(employee: Employee): Int = 0
