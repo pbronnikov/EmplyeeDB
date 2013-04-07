@@ -7,9 +7,9 @@
  */
 
 import java.util.Date
-class ProjectHistoryEntry (
+case class ProjectHistoryEntry (
   val from: Date,
   val to: Date,
   val projectName: String,
-  val role: ProjectRole.type
+  val role: ProjectRole.Value
 )
