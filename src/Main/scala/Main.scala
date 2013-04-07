@@ -17,5 +17,8 @@ object main {
     val empl = dal.getByID(1)
 
     println(empl.firstName)
+
+    Service.check
+    Service.run
   }
 }
