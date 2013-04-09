@@ -56,6 +56,9 @@
     <orderEntry type="library" name="com.twitter_util-collection_1.8.11" level="project" />
     <orderEntry type="library" name="commons-collections_commons-collections_3.2.1" level="project" />
     <orderEntry type="library" name="com.google.guava_guava_r08" level="project" />
+    <orderEntry type="library" name="net.liftweb_lift-json_2.9.1_2.4" level="project" />
+    <orderEntry type="library" name="com.thoughtworks.paranamer_paranamer_2.3" level="project" />
+    <orderEntry type="library" name="org.scala-lang_scalap_2.9.1" level="project" />
   </component>
 </module>
 
