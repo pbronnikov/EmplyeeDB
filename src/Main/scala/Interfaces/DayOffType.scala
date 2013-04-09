@@ -9,7 +9,5 @@
 object DayOffType extends Enumeration {
   type DayOffType = Value
   val Vacation, Exceptional = Value
-
-
 }
 

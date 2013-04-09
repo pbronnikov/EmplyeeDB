@@ -15,8 +15,8 @@ CREATE TABLE Employee (
 CREATE TABLE DayOff(
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	employee_id INT,
-	`from` DATETIME,
-	`to` DATETIME,
+	`from` Timestamp,
+	`to` Timestamp,
 	Description VARCHAR(255),
 	DayOffType SMALLINT,
 

@@ -23,14 +23,14 @@ object DBConnectionFactory {
 
   private val queryFactory = new SqlQueryFactory
   private val apachePoolingDatabaseFactory = new ApachePoolingDatabaseFactory(
-    1,      // minimum number of open/active connections at all times
-    10,      // minimum number of open/active connections at all times
+    1, // minimum number of open/active connections at all times
+    10, // minimum number of open/active connections at all times
     Duration(10, TimeUnit.SECONDS), // asynchronously check the health of open connections every `checkConnectionHealthWhenIdleFor` amount of time
     Duration(10, TimeUnit.SECONDS), // maximum amount of time you're willing to wait to reserve a connection from the pool; throw an exception otherwise
-    true,  // check connection health when reserving the connection from the pool
-    Duration(10, TimeUnit.SECONDS)  // destroy connections if they are idle for longer than `evictConnectionIfIdleFor` amount of time
+    true, // check connection health when reserving the connection from the pool
+    Duration(10, TimeUnit.SECONDS) // destroy connections if they are idle for longer than `evictConnectionIfIdleFor` amount of time
   )
   private val queryEvaluatorFactory = new StandardQueryEvaluatorFactory(apachePoolingDatabaseFactory, queryFactory)
 
-  def GetQueryEvaluator() =  queryEvaluatorFactory(host, dbname, user, password)
+  def GetQueryEvaluator() = queryEvaluatorFactory(host, dbname, user, password)
 }

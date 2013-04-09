@@ -15,4 +15,5 @@ trait WebServiceInterface {
   def addDayOff(dayOff: DayOff, employeeID: Int)
   def editDayOff(dayOff: DayOff, employeeID: Int)
   def deleteDayOff(dayOff: DayOff, employeeID: Int)
+
 }
