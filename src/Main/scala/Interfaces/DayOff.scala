@@ -1,5 +1,3 @@
-
-
 /**
  * Created with IntelliJ IDEA.
  * User: pbronnikov
@@ -9,8 +7,15 @@
  */
 
 import java.util.Date
-import DayOffType._
 
-case class DayOff(val id: Int, val from: Date, val to: Date, val description: String, val dayOffType: DayOffType.Value)
-{
+case class DayOff(val id: Int,
+                  val from: Date,
+                  val to: Date,
+                  val description: String,
+                  val dayOffType: String)
+
+object DayOff {
+  val TYPE_VACATION = "Vacation"
+  val TYPE_EXCEPTIONAL = "Exceptional"
 }
+
