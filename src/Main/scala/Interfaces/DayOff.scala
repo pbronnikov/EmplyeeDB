@@ -11,6 +11,6 @@
 import java.util.Date
 import DayOffType._
 
-class DayOff(val id: Int, val from: Date, val to: Date, val description: String, val dayOffType: DayOffType)
+case class DayOff(val id: Int, val from: Date, val to: Date, val description: String, val dayOffType: DayOffType.Value)
 {
 }
