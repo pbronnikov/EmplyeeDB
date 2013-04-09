@@ -16,44 +16,7 @@ import net.liftweb.json.JsonDSL._
  */
 object Service {
   private var port: Int = 1234
-  /*
-  case class Employee (
-                        val id: Int,
-                        val firstName: String,
-                        val middleName: String,
-                        val lastName: String,
 
-                        val skype: String,
-                        val tel: String,
-                        val email: String,
-                        var dayOffs: List[DayOff],
-                        var projectHistory: List[ProjectHistoryEntry] ) {
-    def toString: String = {
-      var s1: String = ""
-      for(t <- dayOffs)
-        s1 = "id: " + t.id + "\nfrom: " + t.from + "\nto: " + t.to + "\ndescription: " + t.description +
-          "\ntype: " + t.dayOffType
-
-      var s2: String = ""
-      for(t <- projectHistory)
-        s2 = "from: " + t.from + "\nto: " + t.to + "\nprojname: " + t.projectName + "\nrole: " + t.role
-
-      "id: " + id + "\nfirstname: " + firstName + "\nmiddlename: " + middleName + "\nlastname: " + lastName +
-        "\nskype: " + skype + "\ntel: " + tel + "\nemail: " + email + "\n" + s1 + "\n" + s2
-    }
-  }
-
-  var emp = Employee(11, "Josh", "", "Porrigeman", "skypeaccount", "cellphonenumber", "ubermail@sickestperson.com",
-    List(DayOff(1, new Date(), new Date(), "dayoffnumberone", DayOff.TYPE_VACATION),
-      DayOff(2, new Date(), new Date(), "dayoffnumbertwo", DayOff.TYPE_EXCEPTIONAL)),
-    List(ProjectHistoryEntry(new Date(), new Date(), "NEBULA", ProjectHistoryEntry.ROLE_MEMBER),
-      ProjectHistoryEntry(new Date(), new Date(), "KELVIN", ProjectHistoryEntry.ROLE_PM)))
-
-  def check {
-    val js: String = write(emp)
-    println("EMPLOYEE COMPARISON: " + (read[Employee](js) == emp))
-  }
-  */
   def run {
     Http(port).filter(Planify({
       case req @ POST(Path("/create")) =>
