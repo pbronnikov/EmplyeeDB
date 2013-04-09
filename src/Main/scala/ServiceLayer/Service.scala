@@ -65,7 +65,6 @@ object Service {
       case req @ GET(Path("/getAll")) =>
         ResponseString(RequestHandler.getAll)
       case req @ POST(Path("/getByID")) =>
-        println("STRING: " + RequestHandler.getByID(Body.string(req)))
         ResponseString(RequestHandler.getByID(Body.string(req)))
       case req @ POST(Path("/search")) =>
         ResponseString(RequestHandler.search(Body.string(req)))

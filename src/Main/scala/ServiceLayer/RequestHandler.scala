@@ -50,20 +50,16 @@ object RequestHandler {
     } else
       "List is empty"
   }
-
-  //requestBody.forall(_.isDigit)
   def getByID(requestBody: String): String = {
-    var s: String = ""
     if (requestBody.forall(_.isDigit)) {
       val id: Int = Integer.parseInt(requestBody)
       val employee = dataLayerInstance.getByID(id)
       if (employee != None)
         write(employee)
       else
-        s = "No such employee"
+        "No such employee"
     } else
-      s = "Body is not a number"
-    s
+      "Body is not a number"
   }
   def search(criteria: String): String = {
     val employeeList: Seq[Employee] = dataLayerInstance.search(criteria)
