@@ -46,7 +46,8 @@ class DataLayer extends DataLayerInterface {
       row.getString("LastName"),
       row.getString("skype"),
       row.getString("tel"),
-      row.getString("email"))
+      row.getString("email"),
+      Nil, Nil)
   }
 
   def getByID(id: Int): Option[Employee] = {
