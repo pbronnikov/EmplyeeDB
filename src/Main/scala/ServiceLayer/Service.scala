@@ -31,6 +31,12 @@ object Service {
         ResponseString(RequestHandler.getByID(Body.string(req)))
       case req @ POST(Path("/search")) =>
         ResponseString(RequestHandler.search(Body.string(req)))
+      case req @ POST(Path(Seg("addDayOff" :: id :: Nil))) =>
+        ResponseString(RequestHandler.addDayOff(Body.string(req), id))
+      case req @ POST(Path(Seg("editDayOff" :: id :: Nil))) =>
+        ResponseString(RequestHandler.editDayOff(Body.string(req), id))
+      case req @ POST(Path(Seg("deleteDayOff" :: id :: Nil))) =>
+        ResponseString(RequestHandler.deleteDayOff(Body.string(req), id))
       case _ =>
         ResponseString("Error. Wrong path")
     })).run

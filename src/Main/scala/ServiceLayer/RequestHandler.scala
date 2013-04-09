@@ -68,5 +68,37 @@ object RequestHandler {
     } else
       "List is empty"
   }
-
+  def addDayOff(requestBody: String, id: String): String = {
+    val d: DayOff = read[DayOff](requestBody)
+    if (id.forall(_.isDigit))
+      if (d != None) {
+        dataLayerInstance.editDayOff(d, Integer.parseInt(id))
+        "DayOff added"
+      } else
+        "Incorrect dayOff message"
+    else
+      "Incorrect id"
+  }
+  def editDayOff(requestBody: String, id: String): String = {
+    val d: DayOff = read[DayOff](requestBody)
+    if (id.forall(_.isDigit))
+      if (d != None) {
+        dataLayerInstance.editDayOff(d, Integer.parseInt(id))
+        "DayOff edited"
+      } else
+        "Incorrect dayOff message"
+    else
+      "Incorrect id"
+  }
+  def deleteDayOff(requestBody: String, id: String): String = {
+    val d: DayOff = read[DayOff](requestBody)
+    if (id.forall(_.isDigit))
+      if (d != None) {
+        dataLayerInstance.deleteDayOff(d/*, Integer.parseInt(id)*/)
+        "DayOff deleted"
+      } else
+        "Incorrect dayOff message"
+    else
+      "Incorrect id"
+  }
 }
