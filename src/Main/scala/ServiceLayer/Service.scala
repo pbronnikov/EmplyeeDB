@@ -12,7 +12,7 @@ import unfiltered.response._
  */
 object Service {
   def run {
-    Http(AppSettings.port).filter(Planify({
+    Http(AppSettings.port, AppSettings.host).filter(Planify({
       case req@POST(Path("/create")) =>
         ResponseString(RequestHandler.create(Body.string(req)))
       case req@POST(Path("/edit")) =>
