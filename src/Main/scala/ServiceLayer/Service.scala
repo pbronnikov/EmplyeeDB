@@ -11,10 +11,8 @@ import unfiltered.response._
  * To change this template use File | Settings | File Templates.
  */
 object Service {
-  private var port: Int = 1234
-
   def run {
-    Http(port).filter(Planify({
+    Http(AppSettings.port).filter(Planify({
       case req@POST(Path("/create")) =>
         ResponseString(RequestHandler.create(Body.string(req)))
       case req@POST(Path("/edit")) =>
@@ -36,10 +34,5 @@ object Service {
       case _ =>
         ResponseString("Error. Wrong path")
     })).run
-  }
-
-  def run(port: Int) {
-    this.port = port
-    run
   }
 }

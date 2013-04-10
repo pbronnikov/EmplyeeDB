@@ -8,6 +8,6 @@
 
 object main {
   def main(args: Array[String]) = {
-    Service.run(9091)
+    Service.run
   }
 }
