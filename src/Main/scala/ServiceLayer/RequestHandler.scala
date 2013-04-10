@@ -5,14 +5,9 @@
  * Time: 15:13
  * To change this template use File | Settings | File Templates.
  */
-import unfiltered.jetty._
-import unfiltered.filter._
-import unfiltered.request._
-import unfiltered.response._
-import java.util.Date
+
 import net.liftweb.json._
 import net.liftweb.json.Serialization._
-import net.liftweb.json.JsonDSL._
 
 object RequestHandler {
   implicit val formats = Serialization.formats(NoTypeHints)
@@ -26,6 +21,7 @@ object RequestHandler {
     } else
       "Error parsing Employee"
   }
+
   def edit(requestBody: String): String = {
     val e: Employee = read[Employee](requestBody)
     if (e != None) {
@@ -34,15 +30,15 @@ object RequestHandler {
     } else
       "Error parsing Employee"
   }
-  /*
+
   def archive(requestBody: String): String = {
     if (requestBody.contains(Int)) {
       val id: Int = Integer.parseInt(requestBody)
-      dataLayerInstance.archive(id)
+      //dataLayerInstance.archive(id)
     }
-    "id " + id + " archived"
+    "Error: method not implemented"
   }
-  */
+
   def getAll: String = {
     val employeeList: Seq[Employee] = dataLayerInstance.getAll
     if (employeeList != None) {
@@ -50,6 +46,7 @@ object RequestHandler {
     } else
       "List is empty"
   }
+
   def getByID(requestBody: String): String = {
     if (requestBody.forall(_.isDigit)) {
       val id: Int = Integer.parseInt(requestBody)
@@ -61,6 +58,7 @@ object RequestHandler {
     } else
       "Body is not a number"
   }
+
   def search(criteria: String): String = {
     val employeeList: Seq[Employee] = dataLayerInstance.search(criteria)
     if (employeeList != None) {
@@ -68,6 +66,7 @@ object RequestHandler {
     } else
       "List is empty"
   }
+
   def addDayOff(requestBody: String, id: String): String = {
     val d: DayOff = read[DayOff](requestBody)
     if (id.forall(_.isDigit))
@@ -79,6 +78,7 @@ object RequestHandler {
     else
       "Incorrect id"
   }
+
   def editDayOff(requestBody: String, id: String): String = {
     val d: DayOff = read[DayOff](requestBody)
     if (id.forall(_.isDigit))
@@ -90,11 +90,12 @@ object RequestHandler {
     else
       "Incorrect id"
   }
+
   def deleteDayOff(requestBody: String, id: String): String = {
     val d: DayOff = read[DayOff](requestBody)
     if (id.forall(_.isDigit))
       if (d != None) {
-        dataLayerInstance.deleteDayOff(d/*, Integer.parseInt(id)*/)
+        dataLayerInstance.deleteDayOff(d /*, Integer.parseInt(id)*/)
         "DayOff deleted"
       } else
         "Incorrect dayOff message"

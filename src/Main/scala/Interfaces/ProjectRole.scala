@@ -6,6 +6,6 @@
  * To change this template use File | Settings | File Templates.
  */
 object ProjectRole extends Enumeration {
-    type ProjectRole = Value
-    val PM, Member = Value
-  }
+  type ProjectRole = Value
+  val PM, Member = Value
+}

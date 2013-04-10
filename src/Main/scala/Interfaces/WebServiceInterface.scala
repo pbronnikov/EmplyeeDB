@@ -7,13 +7,21 @@
  */
 trait WebServiceInterface {
   def create(employee: Employee): Int
+
   def edit(employee: Employee): Int
+
   def archive(id: Int): Int
-  def getAll : List[Employee]
+
+  def getAll: List[Employee]
+
   def getByID(id: Int): Employee
+
   def search(criteria: String): List[Employee]
+
   def addDayOff(dayOff: DayOff, employeeID: Int)
+
   def editDayOff(dayOff: DayOff, employeeID: Int)
+
   def deleteDayOff(dayOff: DayOff, employeeID: Int)
 
 }

@@ -5,7 +5,6 @@
  * Time: 15:15
  * To change this template use File | Settings | File Templates.
  */
-
 import java.util.Date
 
 case class Employee( val id: Int,
@@ -24,4 +23,3 @@ case class Employee( val id: Int,
     "%s %s %s %s %s %s %s %s %s".format(id, firstName, middleName, lastName, skype, tel, email, lastUpdateDate, isArchived)
   }
 }
-

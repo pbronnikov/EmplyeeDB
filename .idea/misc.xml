@@ -3,7 +3,7 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
-  <component name="IdProvider" IDEtalkID="C666B860EB5B125AC6127AEA365E8E15" />
+  <component IDEtalkID="C666B860EB5B125AC6127AEA365E8E15" name="IdProvider" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>

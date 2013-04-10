@@ -10,9 +10,6 @@ import tools.nsc.util.JavaCharArrayReader
  * To change this template use File | Settings | File Templates.
  */
 
-import scalaz._
-import Scalaz._
-
 
 class DataLayer extends DataLayerInterface {
 
