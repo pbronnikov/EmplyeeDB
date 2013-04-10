@@ -5,18 +5,16 @@
  * Time: 15:15
  * To change this template use File | Settings | File Templates.
  */
-case class Employee( val id: Int,
-                val firstName: String,
-                val middleName: String,
-                val lastName: String,
+case class Employee(
+                     val id: Int,
+                     val firstName: String,
+                     val middleName: String,
+                     val lastName: String,
 
-                val skype: String,
-                val tel: String,
-                val email: String,
-                var dayOffs: List[DayOff],
-                var projectHistory: List[ProjectHistoryEntry]) {
-  override def toString = {
-    "%s %s %s %s %s %s %s".format(id, firstName, middleName, lastName, skype, tel, email)
-  }
+                     val skype: String,
+                     val tel: String,
+                     val email: String,
+                     var dayOffs: List[DayOff],
+                     var projectHistory: List[ProjectHistoryEntry]
+                     ) {
 }
-
