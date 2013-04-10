@@ -24,7 +24,8 @@ class DataLayer extends DataLayerInterface {
 
   private def createEmployee(employee: Employee) {
     DBConnectionFactory.GetQueryEvaluator().insert("INSERT INTO Employee SET firstName=?, middleName=?, LastName=?, " +
-      "skype=?, tel=?, email=?")
+      "skype=?, tel=?, email=?", employee.firstName, employee.middleName, employee.lastName, employee.skype,
+    employee.tel, employee.email)
   }
 
   private def updateEmployee(employee: Employee) {
