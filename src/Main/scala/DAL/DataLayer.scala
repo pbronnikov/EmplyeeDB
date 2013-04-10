@@ -1,5 +1,6 @@
 import DAL.DBConnectionFactory
 import java.sql.Timestamp
+import tools.nsc.util.JavaCharArrayReader
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,14 +25,14 @@ class DataLayer extends DataLayerInterface {
 
   private def createEmployee(employee: Employee) {
     DBConnectionFactory.GetQueryEvaluator().insert("INSERT INTO Employee SET firstName=?, middleName=?, LastName=?, " +
-      "skype=?, tel=?, email=?", employee.firstName, employee.middleName, employee.lastName, employee.skype,
-    employee.tel, employee.email)
+      "skype=?, tel=?, email=?, lastUpdateDate=?, isArchived=?", employee.firstName, employee.middleName, employee.lastName, employee.skype,
+    employee.tel, employee.email, employee.lastUpdateDate, employee.isArchived)
   }
 
   private def updateEmployee(employee: Employee) {
     DBConnectionFactory.GetQueryEvaluator().insert("UPDATE Employee SET firstName=?, middleName=?, LastName=?, " +
-      "skype=?, tel=?, email=? WHERE id=?", employee.firstName, employee.middleName, employee.lastName, employee.skype,
-      employee.tel, employee.email, employee.id)
+      "skype=?, tel=?, email=? lastUpdateDate=?, isArchived=? WHERE id=?", employee.firstName, employee.middleName, employee.lastName, employee.skype,
+      employee.tel, employee.email, employee.lastUpdateDate, employee.isArchived, employee.id)
   }
 
   def getAll: Seq[Employee] = {
@@ -48,6 +49,8 @@ class DataLayer extends DataLayerInterface {
       row.getString("skype"),
       row.getString("tel"),
       row.getString("email"),
+      new java.util.Date(row.getTimestamp("lastUpdateDate").getTime),
+      row.getBoolean("lastUpdateDate"),
       Nil, Nil)
   }
 

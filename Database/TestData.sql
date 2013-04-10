@@ -6,7 +6,9 @@ INSERT INTO `employee`
 `lastName`,
 `skype`,
 `tel`,
-`email`)
+`email`,
+`lastUpdateDate`,
+`isArchieved`)
 VALUES
 (
 'John',
@@ -14,7 +16,9 @@ VALUES
 'Smith',
 'John.Smith',
 '+12345678',
-'johnSmith@bostontechnologies.com'
+'johnSmith@bostontechnologies.com',
+NOW(),
+0
 );
 
 INSERT INTO `dayoff`
@@ -70,7 +74,9 @@ INSERT INTO `employee`
 `lastName`,
 `skype`,
 `tel`,
-`email`)
+`email`,
+`lastUpdateDate`,
+`isArchieved`)
 VALUES
 (
 'Jenny',
@@ -78,6 +84,8 @@ VALUES
 'Smith',
 'Jenny.Smith',
 'n/a',
-'jennySmith@bostontechnologies.com'
+'jennySmith@bostontechnologies.com',
+NOW(),
+0
 );
 
