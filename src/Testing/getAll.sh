@@ -1,0 +1,1 @@
+curl -g localhost:9091/getAll

@@ -1,0 +1,4 @@
+### Test create:
+{"id":0,"firstName":"Ilya","middleName":"Solo","lastName":"Smith","skype":"John.Smith","tel":"+12345678","email":"johnSmith@bostontechnologies.com","dayOffs":[],"projectHistory":[]}
+### Test update:
+{"id":1,"firstName":"George","middleName":"Smith","lastName":"Smith","skype":"John.Smith","tel":"+12345678","email":"johnSmith@bostontechnologies.com","dayOffs":[],"projectHistory":[]}

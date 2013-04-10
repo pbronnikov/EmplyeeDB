@@ -6,14 +6,14 @@
  * To change this template use File | Settings | File Templates.
  */
 case class Employee(
-                     val id: Int,
-                     val firstName: String,
-                     val middleName: String,
-                     val lastName: String,
+                     id: Int,
+                     firstName: String,
+                     middleName: String,
+                     lastName: String,
 
-                     val skype: String,
-                     val tel: String,
-                     val email: String,
+                     skype: String,
+                     tel: String,
+                     email: String,
                      var dayOffs: List[DayOff],
                      var projectHistory: List[ProjectHistoryEntry]
                      ) {
