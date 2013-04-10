@@ -9,9 +9,6 @@ import java.sql.Timestamp
  * To change this template use File | Settings | File Templates.
  */
 
-import scalaz._
-import Scalaz._
-
 
 class DataLayer extends DataLayerInterface {
 

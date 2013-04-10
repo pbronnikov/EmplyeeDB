@@ -8,10 +8,10 @@
 
 import java.util.Date
 
-case class ProjectHistoryEntry (val from: Date,
-                                val to: Date,
-                                val projectName: String,
-                                val role: String)
+case class ProjectHistoryEntry(val from: Date,
+                               val to: Date,
+                               val projectName: String,
+                               val role: String)
 
 object ProjectHistoryEntry {
   val ROLE_PM = "PM"
