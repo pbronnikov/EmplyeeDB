@@ -31,15 +31,14 @@ object RequestHandler {
       "Error parsing Employee"
   }
 
-  /*
   def archive(requestBody: String): String = {
     if (requestBody.contains(Int)) {
       val id: Int = Integer.parseInt(requestBody)
-      dataLayerInstance.archive(id)
+      //dataLayerInstance.archive(id)
     }
-    "id " + id + " archived"
+    "Error: method not implemented"
   }
-  */
+
   def getAll: String = {
     val employeeList: Seq[Employee] = dataLayerInstance.getAll
     if (employeeList != None) {

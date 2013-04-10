@@ -17,8 +17,8 @@ object Service {
         ResponseString(RequestHandler.create(Body.string(req)))
       case req@POST(Path("/edit")) =>
         ResponseString(RequestHandler.edit(Body.string(req)))
-      //case req @ POST(Path("/archive")) =>
-      //  ResponseString(RequestHandler.archive(Body.string(req)))
+      case req @ POST(Path("/archive")) =>
+        ResponseString(RequestHandler.archive(Body.string(req)))
       case req@GET(Path("/getAll")) =>
         ResponseString(RequestHandler.getAll)
       case req@POST(Path("/getByID")) =>
