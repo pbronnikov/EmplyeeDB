@@ -2,7 +2,7 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/../Project/target/scala_2.9.1" />
-    <output-test url="file://$MODULE_DIR$/../Project/target/test/scala_2.9.1" />
+    <output-test url="file://$MODULE_DIR$/../Project/target/scala_2.9.1" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../Project">
       <sourceFolder url="file://$MODULE_DIR$/../Project" isTestSource="false" />
