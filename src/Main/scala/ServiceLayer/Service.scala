@@ -10,7 +10,7 @@ import unfiltered.response._
  * Time: 20:26
  * To change this template use File | Settings | File Templates.
  */
-object Service {
+class Service(logicInstance: EmployeeLogic) {
   def run {
     Http(AppSettings.port, AppSettings.host).filter(Planify({
       case req@POST(Path("/create")) =>

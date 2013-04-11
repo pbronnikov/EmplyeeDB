@@ -8,6 +8,9 @@
 
 object main {
   def main(args: Array[String]) = {
-    Service.run
+    val dataLayerInstance: DataLayerInterface = new DataLayer()
+    val employeeLogicInstance: EmployeeLogic = new EmployeeLogic(dataLayerInstance)
+    val service = new Service(employeeLogicInstance)
+    service.run
   }
 }
