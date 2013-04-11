@@ -11,26 +11,27 @@ import unfiltered.response._
  * To change this template use File | Settings | File Templates.
  */
 class Service(logicInstance: EmployeeLogic) {
+  val requestHandlerInstance = new RequestHandler(logicInstance)
   def run {
     Http(AppSettings.port, AppSettings.host).filter(Planify({
       case req@POST(Path("/create")) =>
-        ResponseString(RequestHandler.create(Body.string(req)))
+        ResponseString(requestHandlerInstance.create(Body.string(req)))
       case req@POST(Path("/edit")) =>
-        ResponseString(RequestHandler.edit(Body.string(req)))
+        ResponseString(requestHandlerInstance.edit(Body.string(req)))
       case req @ POST(Path("/archive")) =>
-        ResponseString(RequestHandler.archive(Body.string(req)))
+        ResponseString(requestHandlerInstance.archive(Body.string(req)))
       case req@GET(Path("/getAll")) =>
-        ResponseString(RequestHandler.getAll)
+        ResponseString(requestHandlerInstance.getAll)
       case req@POST(Path("/getByID")) =>
-        ResponseString(RequestHandler.getByID(Body.string(req)))
+        ResponseString(requestHandlerInstance.getByID(Body.string(req)))
       case req@POST(Path("/search")) =>
-        ResponseString(RequestHandler.search(Body.string(req)))
+        ResponseString(requestHandlerInstance.search(Body.string(req)))
       case req@POST(Path(Seg("addDayOff" :: id :: Nil))) =>
-        ResponseString(RequestHandler.addDayOff(Body.string(req), id))
+        ResponseString(requestHandlerInstance.addDayOff(Body.string(req), id))
       case req@POST(Path(Seg("editDayOff" :: id :: Nil))) =>
-        ResponseString(RequestHandler.editDayOff(Body.string(req), id))
+        ResponseString(requestHandlerInstance.editDayOff(Body.string(req), id))
       case req@POST(Path(Seg("deleteDayOff" :: id :: Nil))) =>
-        ResponseString(RequestHandler.deleteDayOff(Body.string(req), id))
+        ResponseString(requestHandlerInstance.deleteDayOff(Body.string(req), id))
       case _ =>
         ResponseString("Error. Wrong path")
     })).run
