@@ -1,3 +1,5 @@
+import scalaz.Validation
+
 /**
  * Created with IntelliJ IDEA.
  * User: pbronnikov
@@ -6,15 +8,15 @@
  * To change this template use File | Settings | File Templates.
  */
 trait DataLayerInterface {
-  def edit(employee: Employee)
+  def edit(employee: Employee): Validation[Exception, Unit]
 
-  def getAll: Seq[Employee]
+  def getAll: Validation[Exception, Seq[Employee]]
 
-  def getByID(id: Int): Option[Employee]
+  def getByID(id: Int): Validation[Exception, Option[Employee]]
 
-  def search(criteria: String): Seq[Employee]
+  def search(criteria: String): Validation[Exception, Seq[Employee]]
 
-  def editDayOff(dayOff: DayOff, employeeID: Int)
+  def editDayOff(dayOff: DayOff, employeeID: Int): Validation[Exception, Unit]
 
-  def deleteDayOff(dayOff: DayOff)
+  def deleteDayOff(dayOff: DayOff): Validation[Exception, Unit]
 }

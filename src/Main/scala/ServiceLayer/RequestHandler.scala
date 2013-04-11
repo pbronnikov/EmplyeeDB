@@ -40,7 +40,7 @@ object RequestHandler {
   }
 
   def getAll: String = {
-    val employeeList: Seq[Employee] = dataLayerInstance.getAll
+    val employeeList = dataLayerInstance.getAll
     if (employeeList != None) {
       write(employeeList)
     } else
@@ -60,7 +60,7 @@ object RequestHandler {
   }
 
   def search(criteria: String): String = {
-    val employeeList: Seq[Employee] = dataLayerInstance.search(criteria)
+    val employeeList = dataLayerInstance.search(criteria)
     if (employeeList != None) {
       write(employeeList)
     } else

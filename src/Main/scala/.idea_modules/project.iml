@@ -1,0 +1,70 @@
+<module version="4" type="JAVA_MODULE">
+  <component name="NewModuleRootManager">
+    <output url="file://C:\Users\ISolo\Documents\GitHub\EmplyeeDB\src\Main\scala\project\target\scala_2.9.1"></output>
+    <output-test url="file://C:\Users\ISolo\Documents\GitHub\EmplyeeDB\src\Main\scala\project\target\scala_2.9.1"></output-test>
+    <exclude-output></exclude-output>
+    <content url="file://C:\Users\ISolo\Documents\GitHub\EmplyeeDB\src\Main\scala\project">
+      <sourceFolder url="file://C:\Users\ISolo\Documents\GitHub\EmplyeeDB\src\Main\scala\project" isTestSource="false"></sourceFolder>
+      <sourceFolder url="file://C:\Users\ISolo\Documents\GitHub\EmplyeeDB\src\Main\scala\project/plugins" isTestSource="false"></sourceFolder>
+      <excludeFolder url="file://C:\Users\ISolo\Documents\GitHub\EmplyeeDB\src\Main\scala\project/boot"></excludeFolder>
+      <excludeFolder url="file://C:\Users\ISolo\Documents\GitHub\EmplyeeDB\src\Main\scala\project/target"></excludeFolder>
+      <excludeFolder url="file://C:\Users\ISolo\Documents\GitHub\EmplyeeDB\src\Main\scala\project/plugins/target"></excludeFolder>
+      <excludeFolder url="file://C:\Users\ISolo\Documents\GitHub\EmplyeeDB\src\Main\scala\project/plugins/project/target"></excludeFolder>
+    </content>
+    <orderEntry type="inheritedJdk"></orderEntry>
+    <orderEntry type="sourceFolder" forTests="false"></orderEntry>
+    <orderEntry type="module-library">
+      <library name="sbt-and-plugins">
+        <CLASSES>
+          <root url="file://C:\Users\ISolo\Documents\GitHub\EmplyeeDB\src\Main\scala\project\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0"></root>
+          <root 
+          url="jar://C:\Users\ISolo\Documents\GitHub\EmplyeeDB\src\Main\scala\project\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0/xsbti/interface-0.11.0.jar!/">
+</root>
+          <root url="file://C:\Users\ISolo\.sbt\plugins\target\scala-2.9.1\sbt-0.11.0\classes"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\control_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\incremental-compiler_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.ivy2\cache\commons-io\commons-io\jars\commons-io-2.0.1.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\classfile_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\ivy_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\commons-httpclient-3.1.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\run_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\testing_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\tracking_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\discovery_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\jline-0.9.94.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\commons-logging-1.0.4.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\xsbti\interface-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\commons-codec-1.2.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\api_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\actions_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\lib\jansi.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\classpath_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\lib\scala-compiler.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\jsch-0.1.31.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\main_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\launcher-interface_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\persist_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\completion_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\io_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.ivy2\cache\scala_2.9.1\sbt_0.11.0\com.github.mpeltonen\sbt-idea\jars\sbt-idea-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\sbt_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\collections_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\test-interface-0.5.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\lib\scala-library.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\ivy-2.2.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\compile_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\task-system_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\lib\jline.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\process_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\sbinary_2.9.0-0.4.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\tasks_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\cache_2.9.1-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\ISolo\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.0\logging_2.9.1-0.11.0.jar!/"></root>
+        </CLASSES>
+        <JAVADOC> </JAVADOC>
+        <SOURCES> </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry level="project" name="scala-2.9.1" type="library"></orderEntry>
+  </component>
+</module>

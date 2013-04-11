@@ -1,6 +1,6 @@
 import DAL.DBConnectionFactory
 import java.sql.Timestamp
-import tools.nsc.util.JavaCharArrayReader
+import scalaz.{Failure, Success, Validation}
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,17 +13,28 @@ import tools.nsc.util.JavaCharArrayReader
 
 class DataLayer extends DataLayerInterface {
 
-  def edit(employee: Employee) {
-    employee.id match {
-      case 0 => createEmployee(employee)
-      case _ => updateEmployee(employee)
+  def edit(employee: Employee): Validation[Exception, Unit] = {
+    try {
+      Success(
+        employee.id match {
+          case 0 => createEmployee(employee)
+          case _ => updateEmployee(employee)
+        }
+      )
+    } catch {
+      case e: Exception => Failure(e)
     }
   }
 
-  private def createEmployee(employee: Employee) {
-    DBConnectionFactory.GetQueryEvaluator().insert("INSERT INTO Employee SET firstName=?, middleName=?, LastName=?, " +
-      "skype=?, tel=?, email=?, lastUpdateDate=?, isArchived=?", employee.firstName, employee.middleName, employee.lastName, employee.skype,
-    employee.tel, employee.email, employee.lastUpdateDate, employee.isArchived)
+  private def createEmployee(employee: Employee): Validation[Exception, Unit] = {
+    try {
+      Success(DBConnectionFactory.GetQueryEvaluator().insert("INSERT INTO Employee SET firstName=?, middleName=?, LastName=?, " +
+        "skype=?, tel=?, email=?, lastUpdateDate=?, isArchived=?", employee.firstName, employee.middleName, employee.lastName, employee.skype,
+        employee.tel, employee.email, employee.lastUpdateDate, employee.isArchived))
+    } catch {
+      case e: Exception => Failure(e)
+    }
+
   }
 
   private def updateEmployee(employee: Employee) {
@@ -32,9 +43,13 @@ class DataLayer extends DataLayerInterface {
       employee.tel, employee.email, employee.lastUpdateDate, employee.isArchived, employee.id)
   }
 
-  def getAll: Seq[Employee] = {
-    DBConnectionFactory.GetQueryEvaluator.select("SELECT * FROM Employee") {
-      ToEmployee
+  def getAll: Validation[Exception, Seq[Employee]] = {
+    try {
+      Success(DBConnectionFactory.GetQueryEvaluator.select("SELECT * FROM Employee") {
+        ToEmployee
+      })
+    } catch {
+      case e: Exception => Failure(e)
     }
   }
 
@@ -51,27 +66,48 @@ class DataLayer extends DataLayerInterface {
       Nil, Nil)
   }
 
-  def getByID(id: Int): Option[Employee] = {
-    DBConnectionFactory.GetQueryEvaluator.selectOne("SELECT * FROM Employee where id=?", id) {
-      ToEmployee
+  def getByID(id: Int): Validation[Exception, Option[Employee]] = {
+    try {
+      Success(
+        DBConnectionFactory.GetQueryEvaluator.selectOne("SELECT * FROM Employee where id=?", id) {
+          ToEmployee
+        }
+      )
+    } catch {
+      case e: Exception => Failure(e)
     }
   }
 
-  def search(criteria: String): Seq[Employee] = {
+  def search(criteria: String): Validation[Exception, Seq[Employee]] = {
     val wildCardCriteria = "%" + criteria + "%"
-    DBConnectionFactory.GetQueryEvaluator().select("SELECT * FROM Employee WHERE firstName LIKE ? " +
-      "OR middleName LIKE ? OR LastName LIKE ? OR skype LIKE ? OR tel LIKE ? OR email LIKE ? OR id LIKE ?",
-      wildCardCriteria, wildCardCriteria, wildCardCriteria, wildCardCriteria,
-      wildCardCriteria, wildCardCriteria, wildCardCriteria) {
-      ToEmployee
+
+    try {
+      Success(
+        DBConnectionFactory.GetQueryEvaluator().select("SELECT * FROM Employee WHERE firstName LIKE ? " +
+          "OR middleName LIKE ? OR LastName LIKE ? OR skype LIKE ? OR tel LIKE ? OR email LIKE ? OR id LIKE ?",
+          wildCardCriteria, wildCardCriteria, wildCardCriteria, wildCardCriteria,
+          wildCardCriteria, wildCardCriteria, wildCardCriteria) {
+          ToEmployee
+        }
+      )
+    } catch {
+      case e: Exception => Failure(e)
     }
+
   }
 
-  def editDayOff(dayOff: DayOff, employeeID: Int) {
-    dayOff.id match {
-      case 0 => createDayOff(dayOff, employeeID)
-      case _ => updateDayOff(dayOff)
+  def editDayOff(dayOff: DayOff, employeeID: Int): Validation[Exception, Unit] = {
+    try {
+      Success(
+        dayOff.id match {
+          case 0 => createDayOff(dayOff, employeeID)
+          case _ => updateDayOff(dayOff)
+        }
+      )
+    } catch {
+      case e: Exception => Failure(e)
     }
+
   }
 
   private def createDayOff(dayOff: DayOff, employeeID: Int) {
@@ -85,7 +121,14 @@ class DataLayer extends DataLayerInterface {
       new java.sql.Date(dayOff.from.getTime), new java.sql.Date(dayOff.to.getTime), dayOff.description, dayOff.dayOffType)
   }
 
-  def deleteDayOff(dayOff: DayOff) {
-    DBConnectionFactory.GetQueryEvaluator().execute("DELETE FROM dayoff WHERE id=?", dayOff.id)
+  def deleteDayOff(dayOff: DayOff): Validation[Exception, Unit] = {
+    try {
+      Success(
+        DBConnectionFactory.GetQueryEvaluator().execute("DELETE FROM dayoff WHERE id=?", dayOff.id)
+      )
+    } catch {
+      case e: Exception => Failure(e)
+    }
+
   }
 }

@@ -1,3 +1,5 @@
+import scalaz.{Failure, Success, Validation}
+
 /**
  * Created with IntelliJ IDEA.
  * User: pbronnikov
@@ -7,46 +9,55 @@
  */
 class EmployeeLogic(val dataObject: DataLayerInterface) {
 
-  def create(employee: Employee){
-    dataObject.edit(employee);
+  def create(employee: Employee): Validation[Exception, Unit] = {
+    dataObject.edit(employee)
   }
 
-  def edit(employee: Employee){
-    dataObject.edit(employee);
+  def edit(employee: Employee): Validation[Exception, Unit] = {
+    dataObject.edit(employee)
   }
 
-  def archive(id: Int){
+  def archive(id: Int) {
     val emp = dataObject.getByID(id)
-    if (emp.isEmpty)
-      return;
 
-    //val arcEmp = emp.get.copy(isArchieve = true)
-    val arcEmp = emp.get.copy(firstName = "Pavel")
+    emp match {
+      case Success(s) => {
+        if (s.isEmpty)
+          return
 
-    dataObject.edit(arcEmp);
+        val arcEmp = s.get.copy(firstName = "Pavel")
+        dataObject.edit(arcEmp)
+      }
+
+      case Failure(f) => {
+        // Here should be exception handler
+      }
+    }
+
   }
 
-  def getAll: Seq[Employee] = {
+  def getAll: Validation[Exception, Seq[Employee]] = {
     dataObject.getAll
   }
 
-  def getByID(id: Int): Option[Employee] = {
+  def getByID(id: Int): Validation[Exception, Option[Employee]] = {
     dataObject.getByID(id)
   }
 
-  def search(criteria: String): Seq[Employee] = {
+  def search(criteria: String): Validation[Exception, Seq[Employee]] = {
     dataObject.search(criteria)
   }
 
-  def addDayOff(dayOff: DayOff, employeeID: Int) = {
-    dataObject.editDayOff(dayOff, employeeID);
+  def addDayOff(dayOff: DayOff, employeeID: Int): Validation[Exception, Unit] = {
+    dataObject.editDayOff(dayOff, employeeID)
   }
 
-  def editDayOff(dayOff: DayOff, employeeID: Int) = {
-    dataObject.editDayOff(dayOff, employeeID);
+  def editDayOff(dayOff: DayOff, employeeID: Int): Validation[Exception, Unit] = {
+    dataObject.editDayOff(dayOff, employeeID)
   }
 
-  def deleteDayOff(dayOff: DayOff) = {
-    dataObject.deleteDayOff(dayOff);
+  def deleteDayOff(dayOff: DayOff): Validation[Exception, Unit] = {
+    dataObject.deleteDayOff(dayOff)
   }
+
 }

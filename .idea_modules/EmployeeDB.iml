@@ -59,7 +59,7 @@
     <orderEntry type="library" name="net.liftweb_lift-json_2.9.1_2.4" level="project" />
     <orderEntry type="library" name="com.thoughtworks.paranamer_paranamer_2.3" level="project" />
     <orderEntry type="library" name="org.scala-lang_scalap_2.9.1" level="project" />
-    <orderEntry type="library" name="com.typesafe_config_1.0.0" level="project" />
+    <orderEntry type="library" exported="" name="com.typesafe_config_1.0.0" level="project" />
     <orderEntry type="library" name="com.github.mpeltonen_sbt-idea_0.11.0" level="project" />
     <orderEntry type="library" name="commons-io_commons-io_2.0.1" level="project" />
   </component>
