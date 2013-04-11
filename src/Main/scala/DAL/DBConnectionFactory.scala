@@ -1,5 +1,3 @@
-package DAL
-
 /**
  * Created with IntelliJ IDEA.
  * User: pbronnikov
@@ -13,13 +11,15 @@ import com.twitter.querulous.query._
 import com.twitter.querulous.database._
 import com.twitter.util.Duration
 import java.util.concurrent.TimeUnit
+import tools.util.PathResolver.Defaults
 
 
 object DBConnectionFactory {
-  private val host = "localhost"
-  private val dbname = "employerdb_test"
-  private val user = "root"
-  private val password = "toor"
+  private val host = AppSettings.db_host
+
+  private val dbname = AppSettings.db_database
+  private val user = AppSettings.db_user
+  private val password = AppSettings.db_password
 
   private val queryFactory = new SqlQueryFactory
   private val apachePoolingDatabaseFactory = new ApachePoolingDatabaseFactory(
