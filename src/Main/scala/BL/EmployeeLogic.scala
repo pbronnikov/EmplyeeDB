@@ -14,6 +14,7 @@ class EmployeeLogic(val dataObject: DataLayerInterface) {
   }
 
   def edit(employee: Employee): Validation[Exception, Unit] = {
+    val tmp = employee.copy(lastUpdateDate = new java.util.Date())
     dataObject.edit(employee)
   }
 
@@ -25,7 +26,7 @@ class EmployeeLogic(val dataObject: DataLayerInterface) {
         if (s.isEmpty)
           return Success()
 
-        val arcEmp = s.get.copy(isArchived = true)
+        val arcEmp = s.get.copy(isArchived = true, lastUpdateDate = new java.util.Date())
         return dataObject.edit(arcEmp)
       }
 
