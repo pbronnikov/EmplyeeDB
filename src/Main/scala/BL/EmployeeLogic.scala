@@ -14,26 +14,26 @@ class EmployeeLogic(val dataObject: DataLayerInterface) {
   }
 
   def edit(employee: Employee): Validation[Exception, Unit] = {
+    val tmp = employee.copy(lastUpdateDate = new java.util.Date())
     dataObject.edit(employee)
   }
 
-  def archive(id: Int) {
+  def archive(id: Int): Validation[Exception, Unit] = {
     val emp = dataObject.getByID(id)
 
     emp match {
       case Success(s) => {
         if (s.isEmpty)
-          return
+          return Success()
 
-        val arcEmp = s.get.copy(firstName = "Pavel")
-        dataObject.edit(arcEmp)
+        val arcEmp = s.get.copy(isArchived = true, lastUpdateDate = new java.util.Date())
+        return dataObject.edit(arcEmp)
       }
 
       case Failure(f) => {
-        // Here should be exception handler
+        return Failure(f)
       }
     }
-
   }
 
   def getAll: Validation[Exception, Seq[Employee]] = {

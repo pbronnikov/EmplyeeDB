@@ -1,4 +1,3 @@
-import DAL.DBConnectionFactory
 import java.sql.Timestamp
 import scalaz.{Failure, Success, Validation}
 
