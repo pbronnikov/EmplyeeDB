@@ -9,14 +9,13 @@
 import net.liftweb.json._
 import net.liftweb.json.Serialization._
 
-object RequestHandler {
+class RequestHandler(logicInstance: EmployeeLogic) {
   implicit val formats = Serialization.formats(NoTypeHints)
-  val dataLayerInstance: DataLayerInterface = new DataLayer
 
   def create(requestBody: String): String = {
     val e: Employee = read[Employee](requestBody)
     if (e != None) {
-      dataLayerInstance.edit(e)
+      logicInstance.create(e)
       "Employee created"
     } else
       "Error parsing Employee"
@@ -25,7 +24,7 @@ object RequestHandler {
   def edit(requestBody: String): String = {
     val e: Employee = read[Employee](requestBody)
     if (e != None) {
-      dataLayerInstance.edit(e)
+      logicInstance.edit(e)
       "Employee edited"
     } else
       "Error parsing Employee"
@@ -34,13 +33,13 @@ object RequestHandler {
   def archive(requestBody: String): String = {
     if (requestBody.contains(Int)) {
       val id: Int = Integer.parseInt(requestBody)
-      //dataLayerInstance.archive(id)
+      logicInstance.archive(id)
     }
     "Error: method not implemented"
   }
 
   def getAll: String = {
-    val employeeList = dataLayerInstance.getAll
+    val employeeList = logicInstance.getAll
     if (employeeList != None) {
       write(employeeList)
     } else
@@ -50,7 +49,7 @@ object RequestHandler {
   def getByID(requestBody: String): String = {
     if (requestBody.forall(_.isDigit)) {
       val id: Int = Integer.parseInt(requestBody)
-      val employee = dataLayerInstance.getByID(id)
+      val employee = logicInstance.getByID(id)
       if (employee != None)
         write(employee)
       else
@@ -60,7 +59,7 @@ object RequestHandler {
   }
 
   def search(criteria: String): String = {
-    val employeeList = dataLayerInstance.search(criteria)
+    val employeeList = logicInstance.search(criteria)
     if (employeeList != None) {
       write(employeeList)
     } else
@@ -71,7 +70,7 @@ object RequestHandler {
     val d: DayOff = read[DayOff](requestBody)
     if (id.forall(_.isDigit))
       if (d != None) {
-        dataLayerInstance.editDayOff(d, Integer.parseInt(id))
+        logicInstance.addDayOff(d, Integer.parseInt(id))
         "DayOff added"
       } else
         "Incorrect dayOff message"
@@ -83,7 +82,7 @@ object RequestHandler {
     val d: DayOff = read[DayOff](requestBody)
     if (id.forall(_.isDigit))
       if (d != None) {
-        dataLayerInstance.editDayOff(d, Integer.parseInt(id))
+        logicInstance.editDayOff(d, Integer.parseInt(id))
         "DayOff edited"
       } else
         "Incorrect dayOff message"
@@ -95,7 +94,7 @@ object RequestHandler {
     val d: DayOff = read[DayOff](requestBody)
     if (id.forall(_.isDigit))
       if (d != None) {
-        dataLayerInstance.deleteDayOff(d /*, Integer.parseInt(id)*/)
+        logicInstance.deleteDayOff(d /*, Integer.parseInt(id)*/)
         "DayOff deleted"
       } else
         "Incorrect dayOff message"
