@@ -31,8 +31,8 @@ class DataLayer extends DataLayerInterface {
   private def createEmployee(employee: Employee): Validation[Exception, Unit] = {
     try {
       Success(DBConnectionFactory.GetQueryEvaluator().insert("INSERT INTO Employee SET firstName=?, middleName=?, LastName=?, " +
-        "skype=?, tel=?, email=?, lastUpdateDate=?, isArchived=?", employee.firstName, employee.middleName, employee.lastName, employee.skype,
-        employee.tel, employee.email, employee.lastUpdateDate, employee.isArchived))
+        "skype=?, tel=?, email=?, lastUpdateDate=?, isArchieved=?", employee.firstName, employee.middleName, employee.lastName, employee.skype,
+        employee.tel, employee.email, new Timestamp(employee.lastUpdateDate.getTime), employee.isArchived))
     } catch {
       case e: Exception => Failure(e)
     }
