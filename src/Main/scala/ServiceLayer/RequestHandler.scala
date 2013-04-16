@@ -17,7 +17,7 @@ class RequestHandler(logicInstance: EmployeeLogic) {
   implicit val formats = Serialization.formats(NoTypeHints)
 
   def create(requestBody: String): String = {
-    val e: Employee = read[Employee](requestBody)
+    val e = read[EmplDTOInput](requestBody).apply()
     if (e != None)
       logicInstance.create(e) match {
         case Success(_) => "Employee created"
@@ -28,7 +28,7 @@ class RequestHandler(logicInstance: EmployeeLogic) {
   }
 
   def edit(requestBody: String): String = {
-    val e: Employee = read[Employee](requestBody)
+    val e = read[EmplDTOInput](requestBody).apply()
     if (e != None)
       logicInstance.edit(e) match {
         case Success(_) => "Employee edit"
@@ -51,7 +51,7 @@ class RequestHandler(logicInstance: EmployeeLogic) {
 
   def getAll: String = {
     logicInstance.getAll match {
-      case Success(employeeList) => write(employeeList)
+      case Success(employeeList) => write(employeeList.map(e => e()))
       case Failure(f) => f.getMessage
     }
   }
@@ -60,7 +60,7 @@ class RequestHandler(logicInstance: EmployeeLogic) {
     if (requestBody.forall(_.isDigit)) {
       val id: Int = Integer.parseInt(requestBody)
       logicInstance.getByID(id) match {
-        case Success(employee) => write(employee)
+        case Success(employee) => write(employee.get.apply())
         case Failure(f) => f.getMessage
       }
     } else
@@ -69,7 +69,7 @@ class RequestHandler(logicInstance: EmployeeLogic) {
 
   def search(criteria: String): String = {
     logicInstance.search(criteria) match {
-      case Success(employeeList) => write(employeeList)
+      case Success(employeeList) => write(employeeList.map(e => e()))
       case Failure(f) => f.getMessage
     }
   }
