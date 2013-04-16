@@ -8,7 +8,7 @@
 package Interfaces
 
 import java.util.Date
-
+import ServiceLayer.EmployeeDTO
 
 case class Employee(id: Int,
                     firstName: String,
@@ -25,4 +25,7 @@ case class Employee(id: Int,
                     var dayOffs: List[DayOff],
                     var projectHistory: List[ProjectHistoryEntry]) {
 
+  def apply() = {
+    EmployeeDTO(id, firstName, middleName, lastName, skype, tel, email, dayOffs, projectHistory)
+  }
 }
