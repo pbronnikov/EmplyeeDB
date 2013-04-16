@@ -5,6 +5,12 @@
  * Time: 17:40
  * To change this template use File | Settings | File Templates.
  */
+package Main
+
+import Interfaces.DataLayerInterface
+import DAL.DataLayer
+import BL.EmployeeLogic
+import ServiceLayer.Service
 
 
 object main {

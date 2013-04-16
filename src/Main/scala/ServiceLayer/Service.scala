@@ -1,7 +1,11 @@
+package ServiceLayer
+
+import Main.AppSettings
 import unfiltered.jetty._
 import unfiltered.filter._
 import unfiltered.request._
 import unfiltered.response._
+import BL.EmployeeLogic
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,13 +16,14 @@ import unfiltered.response._
  */
 class Service(logicInstance: EmployeeLogic) {
   val requestHandlerInstance = new RequestHandler(logicInstance)
+
   def run {
     Http(AppSettings.port, AppSettings.host).filter(Planify({
       case req@POST(Path("/create")) =>
         ResponseString(requestHandlerInstance.create(Body.string(req)))
       case req@POST(Path("/edit")) =>
         ResponseString(requestHandlerInstance.edit(Body.string(req)))
-      case req @ POST(Path("/archive")) =>
+      case req@POST(Path("/archive")) =>
         ResponseString(requestHandlerInstance.archive(Body.string(req)))
       case req@GET(Path("/getAll")) =>
         ResponseString(requestHandlerInstance.getAll)

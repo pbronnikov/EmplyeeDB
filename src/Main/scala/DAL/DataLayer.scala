@@ -1,5 +1,8 @@
+package DAL
+
 import java.sql.Timestamp
 import scalaz.{Failure, Success, Validation}
+import Interfaces.{DayOff, Employee, DataLayerInterface}
 
 /**
  * Created with IntelliJ IDEA.

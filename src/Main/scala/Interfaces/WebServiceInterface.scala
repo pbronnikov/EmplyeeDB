@@ -5,6 +5,8 @@
  * Time: 14:57
  * To change this template use File | Settings | File Templates.
  */
+package Interfaces
+
 trait WebServiceInterface {
   def create(employee: Employee): Int
 

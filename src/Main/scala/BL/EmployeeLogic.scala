@@ -1,4 +1,8 @@
+package BL
+
 import scalaz.{Failure, Success, Validation}
+import Interfaces.{DayOff, Employee, DataLayerInterface}
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,7 +19,7 @@ class EmployeeLogic(val dataObject: DataLayerInterface) {
 
   def edit(employee: Employee): Validation[Exception, Unit] = {
     val tmp = employee.copy(lastUpdateDate = new java.util.Date())
-    dataObject.edit(employee)
+    dataObject.edit(tmp)
   }
 
   def archive(id: Int): Validation[Exception, Unit] = {
@@ -27,11 +31,11 @@ class EmployeeLogic(val dataObject: DataLayerInterface) {
           return Success()
 
         val arcEmp = s.get.copy(isArchived = true, lastUpdateDate = new java.util.Date())
-        return dataObject.edit(arcEmp)
+        dataObject.edit(arcEmp)
       }
 
       case Failure(f) => {
-        return Failure(f)
+        Failure(f)
       }
     }
   }

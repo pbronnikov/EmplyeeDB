@@ -1,4 +1,7 @@
+package Interfaces
+
 import scalaz.Validation
+
 
 /**
  * Created with IntelliJ IDEA.

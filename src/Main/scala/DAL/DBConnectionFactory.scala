@@ -5,13 +5,14 @@
  * Time: 17:21
  * To change this template use File | Settings | File Templates.
  */
+package DAL
 
 import com.twitter.querulous.evaluator._
 import com.twitter.querulous.query._
 import com.twitter.querulous.database._
 import com.twitter.util.Duration
 import java.util.concurrent.TimeUnit
-import tools.util.PathResolver.Defaults
+import Main.AppSettings
 
 
 object DBConnectionFactory {

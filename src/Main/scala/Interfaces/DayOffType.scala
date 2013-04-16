@@ -5,6 +5,7 @@
  * Time: 15:23
  * To change this template use File | Settings | File Templates.
  */
+package Interfaces
 
 object DayOffType extends Enumeration {
   type DayOffType = Value

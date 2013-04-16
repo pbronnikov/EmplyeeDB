@@ -4,6 +4,8 @@
  * Date: 10.04.13
  * Time: 12:09
  */
+package Main
+
 import com.typesafe.config._
 
 object AppSettings {
@@ -14,7 +16,7 @@ object AppSettings {
   val db_user = AppSettings.conf.getString("settings.db_user")
   val db_password = AppSettings.conf.getString("settings.db_password")
 
-  val host    = AppSettings.conf.getString("settings.host")
-  val port    = AppSettings.conf.getInt("settings.port")
+  val host = AppSettings.conf.getString("settings.host")
+  val port = AppSettings.conf.getInt("settings.port")
 
 }

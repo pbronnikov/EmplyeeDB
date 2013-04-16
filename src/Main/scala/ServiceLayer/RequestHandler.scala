@@ -5,9 +5,13 @@
  * Time: 15:13
  * To change this template use File | Settings | File Templates.
  */
+package ServiceLayer
+
 import net.liftweb.json._
 import net.liftweb.json.Serialization._
 import scalaz.{Failure, Success}
+import Interfaces.{DayOff, Employee}
+import BL.EmployeeLogic
 
 class RequestHandler(logicInstance: EmployeeLogic) {
   implicit val formats = Serialization.formats(NoTypeHints)
@@ -95,7 +99,7 @@ class RequestHandler(logicInstance: EmployeeLogic) {
       } else
         "Can not parse DayOff"
     } else
-        "Incorrect id"
+      "Incorrect id"
   }
 
   def deleteDayOff(requestBody: String, id: String): String = {

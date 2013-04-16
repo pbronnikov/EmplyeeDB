@@ -5,21 +5,24 @@
  * Time: 15:15
  * To change this template use File | Settings | File Templates.
  */
+package Interfaces
+
 import java.util.Date
 
-case class Employee( val id: Int,
-                val firstName: String,
-                val middleName: String,
-                val lastName: String,
 
-                val skype: String,
-                val tel: String,
-                val email: String,
-                val lastUpdateDate: Date,
-                val isArchived: Boolean ,
-                var dayOffs: List[DayOff],
-                var projectHistory: List[ProjectHistoryEntry]) {
-  override def toString = {
-    "%s %s %s %s %s %s %s %s %s".format(id, firstName, middleName, lastName, skype, tel, email, lastUpdateDate, isArchived)
-  }
+case class Employee(id: Int,
+                    firstName: String,
+                    middleName: String,
+                    lastName: String,
+
+                    skype: String,
+                    tel: String,
+                    email: String,
+
+                    lastUpdateDate: Date,
+                    isArchived: Boolean,
+
+                    var dayOffs: List[DayOff],
+                    var projectHistory: List[ProjectHistoryEntry]) {
+
 }
