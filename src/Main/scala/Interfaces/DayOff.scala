@@ -9,11 +9,11 @@ package Interfaces
 
 import java.util.Date
 
-case class DayOff(val id: Int,
-                  val from: Date,
-                  val to: Date,
-                  val description: String,
-                  val dayOffType: String)
+case class DayOff(id: Int,
+                  from: Date,
+                  to: Date,
+                  description: String,
+                  dayOffType: String)
 
 object DayOff {
   val TYPE_VACATION = "Vacation"
